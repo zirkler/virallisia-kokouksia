@@ -1,0 +1,110 @@
+\documentclass[a4paper, twocolumn]{article}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\topmargin}{0cm}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Vektorgeometrie}
+
+\subsection{Geraden}
+    Gerade in Parameterform:
+    \begin{displaymath}
+       g\colon x(\lambda) = a + \lambda v
+    \end{displaymath}
+
+
+\subsection{Ebenen}
+    Ebene in Parameterform (Punkt-Richtungs-Form):
+    \begin{displaymath}
+       E:	x(\lambda, \mu) = a + \lambda r_1 + \mu r_2
+    \end{displaymath}
+    
+    Ebene in Normalform:
+    \begin{displaymath}
+       E:	\langle x - a, n \rangle = 0
+    \end{displaymath}
+    
+    Ebene in Koordinatenform:
+    \begin{displaymath}
+       E: n_1 \cdot x + n_2 \cdot y + n_3 \cdot z = a
+    \end{displaymath}
+
+   \subsubsection{Umformen}
+   	\paragraph{Normalform nach Koordinatenform:}
+        \begin{flalign*}
+            \langle \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} , \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} - \begin{pmatrix} n_1 \\ n_2 \\ n_3 \end{pmatrix} \rangle = 0 \nonumber \\ 
+            \Rightarrow  \langle \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} , \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} \rangle - \langle \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} , \begin{pmatrix} n_1 \\ n_2 \\ n_3 \end{pmatrix} \rangle = 0 \nonumber \\
+            \Rightarrow a_1 x_1 + a_2 x_2 + a_3 x_3 - (a_1 n_1 + a_2 n_2 + a_3 n_3 ) = 0 \nonumber
+        \end{flalign*}
+        
+        \paragraph{Parameterform nach Normalform}
+        \begin{align*}
+        	geg\colon E\colon (\lambda, \mu) = a + \lambda \cdot r_1 + \mu \cdot r_2 \\
+		n = r_1 \times r_2 
+		\Rightarrow \langle x - a, n \rangle = 0 
+        \end{align*}
+        (a ist Aufpunkt der Ebene)
+        
+        \paragraph{Koordinatenform nach Normalform: }
+        Normalenvektor ablesen:
+        \begin{flalign*}
+        	geg\colon -x_1 + 2x_2 - x_3 = 0 \\
+		\Rightarrow n =  \begin{pmatrix} -1 \\ 2 \\ -1 \end{pmatrix}
+        \end{flalign*}
+        Nun muss man einen Punkt finden, welcher in der Ebene liegt, also die Koordinatengleich erfüllt.
+	Dieser Punkt ist $a$ in $\langle x - a, n \rangle = 0$. Fertig.
+	
+	\paragraph{Koordinatenform nach Parameterform: }
+	Man muss drei Punkte $a, r_1, r_2$ in der Ebene finden, diese werden dann in $x(\lambda, \mu) = a + \lambda r_1 + \mu r_2$ eingesetzt.
+	
+   \subsubsection{Schnitte} 
+       \paragraph{Schnittpunkt zweier Geraden}
+       dazu müssen die beiden Richtungsvektoren der Geraden linear unabhängig sein. Dann wird einfach $g = h$ gesetzt.
+       
+       \paragraph{Schnittpunkt Gerade mit Ebene}
+       
+   
+   \subsubsection{Abstände}
+      \paragraph{Punkt zu Punkt:}
+      Abstand von P zu Q $= |P-Q|$
+      
+      \paragraph{Punkt zu Gerade:}
+      gegeben sei die Gerade $g\colon x = a + \lambda r$ mit $||r|| = 1$ und Punkt $P$. 
+      Man wählt bel. Punkt B auf $g$. Setze $\omega := p-b$. 
+      Es Sei $\varphi := \sphericalangle(\omega, r)$. Dann gilt:\\
+      Abstand $\delta = ||\omega|| \cdot sin \varphi = ||\omega|| \cdot ||r|| \cdot sin \varphi = ||\omega \times r||$
+      
+      \paragraph{Abstand zwischen zwei parallelen Geraden:}
+      Wähle Punkt $P$ auf $g_1$, dann wie oben $\delta$ berechnen.
+
+      \paragraph{Abstand zwischen zwei windschiefen Geraden:}
+      Die Geraden $g: x = p +  tu$ und $h: x = q + sv$ seien windschief. $n = u \times v$ (n steht senkrecht auf u und v). Dann gilt: $\delta = \frac{|(q-p) \cdot n|}{|n|}$.
+
+      \paragraph{Punkt zu Ebene}      
+      Hilfsgerade $h: x = p + t \cdot n$ durch P, die senkrecht auf der Ebene $E$ steht. Wo sich $h$ und $E$ schneiden ist der Fußpunkt F. Abstand $\delta = |PF|$.
+      \paragraph{Gerade zu Ebene}
+      \paragraph{Ebene zu Ebene}
+   
+ 
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
