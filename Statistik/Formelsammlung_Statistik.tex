@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, twocolumn]{article}
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{0cm}
 \setlength{\topmargin}{0cm}
@@ -9,53 +9,64 @@
 
 \section{Statistische Maßzahlen}
 
-empirische Kovarianz
-\begin{displaymath}
-    \tilde{s}_{xy} = \frac{1}{n-1} \sum^n_{i=1} (x_{i}-\bar{x}) (y_{i}-\bar{y})
-\end{displaymath} \\
+    empirische Kovarianz
+    \begin{displaymath}
+        \tilde{s}_{xy} = \frac{1}{n-1} \sum^n_{i=1} (x_{i}-\bar{x}) (y_{i}-\bar{y})
+    \end{displaymath} \\
+    
+    empirische Varianz:
+    \begin{displaymath}
+      \sigma^2 = \tilde{s}^2 = \tilde{s}^2_x := 
+      \frac{1}{n-1} \sum^{n}_{i=1} (x_{i} - \bar{x})^2 = \frac{1}{n-1}(\sum^n_{i=1} x^2_i -n \bar x^2)
+    \end{displaymath} \\
+    
+    Standardabweichung
+    \begin{displaymath}
+      \sigma = \tilde s = \tilde s_x = \sqrt{\tilde s ^2}
+    \end{displaymath} \\
+    
+    empirischer Korrelationskoeffizient (nach Bravais Pearson)
+    \begin{displaymath}
+     r_{xy} = \frac{\tilde s_{xy}}{\tilde s_x \cdot \tilde s_y}
+    \end{displaymath} \\
+    
+    
+    Spearman'sche Rangkorrelationskoeffizient von X und Y
+    \begin{equation}
+      r_{SP}(x,y) = \frac
+      {\sum\limits^n_{i=1} \Big(rg(x_i) - \overline{rg_x}) (rg(y_i)- \overline{rg_y} \Big) }
+      { \sqrt{ \sum\limits^n_{i=1} (rg(x_i) - \bar{rg_x})^2 \cdot \sum\limits^n_{i=1} (rg(y_i) - \bar{rg_y})^2 }}
+    \end{equation}
+    
+    \subsection{Lineare Regression}
+        optimale Ausgleichgerade:
+        \begin{displaymath}
+            y = f(x) = \hat a x + \hat b
+        \end{displaymath}
+        
+        \begin{displaymath}
+            \hat a = \frac{\tilde s_{xy}}{\tilde s^2_x}
+        \end{displaymath}
+        
+        \begin{displaymath}
+            \hat b = \bar y - \hat a \bar x
+        \end{displaymath}
+        
+        Bestimmtheitsmaß, Modellgüte:
+        \begin{displaymath}
+          R^2 = r^2_{xy}
+        \end{displaymath}
+        
+\section{Wahrscheinlichkeit}
+	es gilt:\\
+		$ P(A \cap B) = P(A) + P(B) - P(A \cup B)  $ \\
+		$ P(A \cup B) = P(A) + P(B) - P(A \cap B) $ \\
+		$ P(A \cap \overline B) = P(A) - P(A \cap B) $ \\
+		$ P(\overline A  \cap \overline B) = P(\overline{A \cup B}) = 1 - P(A \cup B) $
 
-empirische Varianz:
-\begin{displaymath}
-  \sigma^2 = \tilde{s}^2 = \tilde{s}^2_x := \frac{1}{n-1} \sum^{n}_{i=1} (x_{i} - \bar{x})^2 = \frac{1}{n-1}(\sum^n_{i=1} x^2_i -n \bar x^2)
-\end{displaymath} \\
-
-Standardabweichung
-\begin{displaymath}
-  \sigma = \tilde s = \tilde s_x = \sqrt{\tilde s ^2}
-\end{displaymath} \\
-
-empirischer Korrelationskoeffizient (nach Bravais Pearson)
-\begin{displaymath}
- r_{xy} = \frac{\tilde s_{xy}}{\tilde s_x \cdot \tilde s_y}
-\end{displaymath} \\
 
 
-Spearman'sche Rangkorrelationskoeffizient von X und Y
-\begin{equation}
-  r_{SP}(x,y) = \frac
-  {\sum\limits^n_{i=1} \Big(rg(x_i) - \overline{rg_x}) (rg(y_i)- \overline{rg_y} \Big) }
-  { \sqrt{ \sum\limits^n_{i=1} (rg(x_i) - \bar{rg_x})^2 \cdot \sum\limits^n_{i=1} (rg(y_i) - \bar{rg_y})^2 }}
-\end{equation}
 
-\subsection{Lineare Regression}
-optimale Ausgleichgerade:
-
-\begin{displaymath}
-    y = f(x) = \hat a x + \hat b
-\end{displaymath}
-
-\begin{displaymath}
-    \hat a = \frac{\tilde s_{xy}}{\tilde s^2_x}
-\end{displaymath}
-
-\begin{displaymath}
-    \hat b = \bar y - \hat a \bar x
-\end{displaymath}
-
-Bestimmtheitsmaß, Modellgüte:
-\begin{displaymath}
-  R^2 = r^2_{xy}
-\end{displaymath}
 
 
 \end{document}
