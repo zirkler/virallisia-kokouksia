@@ -2,8 +2,10 @@
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{0cm}
 \setlength{\topmargin}{0cm}
+\usepackage{amsmath}
 \usepackage{indentfirst}
 \usepackage[utf8]{inputenc}
+\usepackage{amssymb}
 
 \begin{document}
 
@@ -15,10 +17,10 @@
     \end{displaymath} \\
     
     empirische Varianz:
-    \begin{displaymath}
-      \sigma^2 = \tilde{s}^2 = \tilde{s}^2_x := 
-      \frac{1}{n-1} \sum^{n}_{i=1} (x_{i} - \bar{x})^2 = \frac{1}{n-1}(\sum^n_{i=1} x^2_i -n \bar x^2)
-    \end{displaymath} \\
+    \begin{gather*}
+        \sigma^2 = \tilde{s}^2 = \tilde{s}^2_x := \\
+        \frac{1}{n-1} \sum^{n}_{i=1} (x_{i} - \bar{x})^2 = \frac{1}{n-1}(\sum^n_{i=1} x^2_i -n \bar x^2)
+    \end{gather*}
     
     Standardabweichung
     \begin{displaymath}
@@ -32,11 +34,11 @@
     
     
     Spearman'sche Rangkorrelationskoeffizient von X und Y
-    \begin{equation}
+    \begin{gather*}
       r_{SP}(x,y) = \frac
       {\sum\limits^n_{i=1} \Big(rg(x_i) - \overline{rg_x}) (rg(y_i)- \overline{rg_y} \Big) }
       { \sqrt{ \sum\limits^n_{i=1} (rg(x_i) - \bar{rg_x})^2 \cdot \sum\limits^n_{i=1} (rg(y_i) - \bar{rg_y})^2 }}
-    \end{equation}
+    \end{gather*}
     
     \subsection{Lineare Regression}
         optimale Ausgleichgerade:
@@ -58,13 +60,33 @@
         \end{displaymath}
         
 \section{Wahrscheinlichkeit}
-	es gilt:\\
-		$ P(A \cap B) = P(A) + P(B) - P(A \cup B)  $ \\
-		$ P(A \cup B) = P(A) + P(B) - P(A \cap B) $ \\
-		$ P(A \cap \overline B) = P(A) - P(A \cap B) $ \\
-		$ P(\overline A  \cap \overline B) = P(\overline{A \cup B}) = 1 - P(A \cup B) $
+	\subsection{Allgemein gilt} 
+	$ P(A \cap B) = P(A) + P(B) - P(A \cup B)  $ \\
+	$ P(A \cup B) = P(A) + P(B) - P(A \cap B) $ \\
+	$ P(A \cap \overline B) = P(A) - P(A \cap B) $ \\
+	$ P(\overline A  \cap \overline B) = P(\overline{A \cup B}) = 1 - P(A \cup B) $
+	
+	\subsection{für die bedingte Wahrscheinlichkeit gilt}
+	\begin{gather*}
+	P(B|A) = \frac{ P(A \cap B) }{ P(A) } \\
+	\Leftrightarrow P(A \cap B) = P(B|A) \cdot P(A)
+	\end{gather*}
+	
+	\subsection{totale Wahrscheinlichkeit}
+	Setzt sich das Ereignis A zusammen aus den sich gegenseitig ausschließenden 
+	Ereignissen $A \cap B1$ und $A \cap B2$, so gilt: \\
+	$  P(A) = P(A | B_1) \cdot P(B_1) + P(A | B_2) \cdot P(B_2) $
+	
+\section{Zufallsvariablen}
+	\subsection{Dichtefuntion} $ \mathbb{P}(X=x) = f(x) $ ist einfach die Wahrscheinlichkeit für x.
 
-
+	\subsection{Verteilungsfunktion} $ \mathbb{P}(X \le x) = F(x) $ gibt die Wahrscheinlichkeit an, dass X kleiner oder gleich x ist.
+	
+	\subsection{Erwartungswert}
+	Dieser Wert ist als Mittel zu erwarten.
+	\begin{gather*}
+		\mathbb{E}(X) = \sum_i x_i \cdot f(x_i)
+	\end{gather*}
 
 
 
